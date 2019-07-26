@@ -11,7 +11,8 @@ class TaskState(Enum):
 
 class OcrTaskModel(Base):
     __tablename__ = 'ocrTasks'
-    id = Column('id', String(500), primary_key=True)
+    id = Column('id', Integer, primary_key=True, autoincrement=True)
+    awsid = Column('awsid', String(500))
     status = Column('status', String(40))
     created = Column('created', DateTime, default=func.now())
 
