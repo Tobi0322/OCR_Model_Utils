@@ -1,4 +1,3 @@
-import flask
 import yaml
 
 def get_config_file_name():
