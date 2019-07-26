@@ -4,7 +4,7 @@ from sqlalchemy_utils import create_database, database_exists
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 from sqlalchemy.orm.session import sessionmaker
-from Utils import get_config_file_name
+from OCR_Shared.Utils import get_config_file_name
 
 class Db():
     _session = None

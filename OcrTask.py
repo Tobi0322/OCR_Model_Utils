@@ -1,7 +1,7 @@
 from enum import Enum
 from sqlalchemy import Column, Integer, String, DateTime, func
-from db import Db
-from db import Base
+from OCR_Shared.db import Db
+from OCR_Shared.db import Base
 
 class TaskState(Enum):
     NEW = 'NEW'
