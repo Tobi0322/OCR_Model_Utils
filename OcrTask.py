@@ -28,4 +28,11 @@ class OcrTaskModel(Base):
         session.delete(obj)
         session.commit()
         return obj
+    
+    @classmethod
+    def change_status(cls, task_id, status):
+        session = Db.get_db_session()
+        obj=session.query(cls).filter(cls.id==task_id).first()
+        obj.status = status
+        session.commit()       
 
