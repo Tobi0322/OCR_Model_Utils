@@ -1,5 +1,5 @@
 from enum import Enum
-from sqlalchemy import Column, Integer, String, DateTime, func
+from sqlalchemy import Column, Integer, String, DateTime, func, exists
 from OCR_Shared.db import Db
 from OCR_Shared.db import Base
 
@@ -28,4 +28,12 @@ class OcrTaskModel(Base):
         session.delete(obj)
         session.commit()
         return obj
+    import pdb
+    
+    @classmethod
+    def check_if_exists(cls, task_id):
+        session = Db.get_db_session()
+        (ret, ) = session.query(exists().where(cls.id==task_id))
+        print(ret)
+        return ret
 
